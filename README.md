@@ -2,7 +2,7 @@
 
 Developed by Lucas Koval.
 
-## `APP URL:`
+## `APP URL`
 
 [https://nextjs-template-lkdev.vercel.app/](https://nextjs-template-lkdev.vercel.app/)
 
@@ -23,7 +23,9 @@ You will also see any lint errors in the console.
 Runs the app in the production mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## `Author` Lucas Koval | Full Stack Developer
+## `Author`
+
+## Lucas Koval | Full Stack Developer
 
 Contact:
 
