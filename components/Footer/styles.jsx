@@ -7,9 +7,9 @@ const FooterSection = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #8b949e;
-  background-color: #161b22;
-  @media (max-width: 425px) {
+  color: ${({ theme }) => theme.color.grey};
+  background-color: ${({ theme }) => theme.color.darkGrey};
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     height: 9.5rem;
   }
 `
@@ -20,7 +20,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 425px) {
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     flex-flow: column;
     height: 9.5rem;
   }
@@ -32,7 +32,7 @@ const SubContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 425px) {
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     margin: 0.4rem 0;
   }
 `
@@ -44,7 +44,7 @@ const Title = styled.h4`
 const Credits = styled.p`
   font-size: 17px;
   margin: 0;
-  color: #58a6ff;
+  color: ${({ theme }) => theme.color.lightBlue};
 `
 
 export { FooterSection, Container, SubContainer, Title, Credits }

@@ -8,9 +8,9 @@ const HeaderSection = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #58a6ff;
-  background-color: #161b22;
-  @media (max-width: 425px) {
+  color: ${({ theme }) => theme.color.grey};
+  background-color: ${({ theme }) => theme.color.darkGrey};
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     height: 4.5rem;
     position: fixed;
     top: 0;
@@ -21,7 +21,7 @@ const HeaderSection = styled.header`
 const Title = styled.h1`
   text-align: center;
   margin: 0;
-  @media (max-width: 425px) {
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     font-size: 1.3rem;
   }
 `
@@ -33,7 +33,7 @@ const ImageContainer = styled.div`
     :hover {
       transform: scale(1.2);
     }
-    @media (max-width: 425px) {
+    @media (max-width: ${({ theme }) => theme.device.mobile}) {
       width: 2.3rem;
       margin-left: 1rem;
       :hover {
@@ -56,7 +56,7 @@ const ImageContainer = styled.div`
         }
       }
     }
-    @media (max-width: 425px) {
+    @media (max-width: ${({ theme }) => theme.device.mobile}) {
       width: 2.8rem;
       height: 2.8rem;
       margin-right: 1rem;
