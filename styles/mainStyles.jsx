@@ -67,8 +67,8 @@ const BodyContainer = styled.div`
   justify-content: center;
   align-items: center;
   color: #8b949e;
-  background-color: #0d1117;
-  @media (max-width: 425px) {
+  background-color: ${({ theme }) => theme.color.darkBlue};
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     min-height: 100vh;
     height: -webkit-fill-available;
   }
@@ -82,7 +82,7 @@ const MainSection = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media (max-width: 425px) {
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     height: -webkit-fill-available;
   }
 `
@@ -94,7 +94,7 @@ const PageContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  @media (max-width: 425px) {
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     width: 90%;
     height: -webkit-fill-available;
     flex-flow: column;
@@ -106,7 +106,7 @@ const ErrorContainer = styled.div`
   img {
     border-radius: 75px;
   }
-  @media (max-width: 425px) {
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     margin-top: 5rem;
     img {
       width: '300px';

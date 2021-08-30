@@ -1,17 +1,18 @@
 import React from 'react'
 import Head from 'next/head'
+import NextNprogress from 'nextjs-progressbar'
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { ThemeProvider } from 'styled-components'
-import { GlobalProvider } from '../services/context/GlobalContext'
-import { theme } from '../styles/theme'
-import { GlobalStyle, ToastStyledContainer } from '../styles/mainStyles'
+import { GlobalProvider } from '@/context/GlobalContext'
+import { theme } from '@/styles/theme'
+import { GlobalStyle, ToastStyledContainer } from '@/styles/mainStyles'
 
 function MyApp({ Component, pageProps, token }) {
+  // Apollo client configuration
   const httpLink = createHttpLink({
-    uri: 'https://api.github.com/graphql',
+    uri: 'https://example-url.com/graphql',
   })
-
   const authLink = setContext((_, { headers }) => {
     return {
       headers: {
@@ -20,7 +21,6 @@ function MyApp({ Component, pageProps, token }) {
       },
     }
   })
-
   const client = new ApolloClient({
     cache: new InMemoryCache(),
     link: authLink.concat(httpLink),
@@ -37,6 +37,7 @@ function MyApp({ Component, pageProps, token }) {
       <GlobalStyle />
       <GlobalProvider>
         <ApolloProvider client={client}>
+          <NextNprogress />
           <Component {...pageProps} />
         </ApolloProvider>
       </GlobalProvider>

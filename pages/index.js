@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Loader from 'react-loader-spinner'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import { BodyContainer, MainSection, PageContainer } from '../styles/mainStyles'
+import { BodyContainer, MainSection, PageContainer } from '@/styles/mainStyles'
 
 export default function Home() {
+  const router = useRouter()
+  /*/// Show the spinner when loading the component (NOT_IN_USE)
   const [loading, setLoading] = useState(true)
 
   setTimeout(() => {
     setLoading(false)
-  }, 1200)
+  }, 1000)
 
   if (loading) {
     return (
@@ -19,10 +20,14 @@ export default function Home() {
       </BodyContainer>
     )
   }
+  */
 
   return (
     <MainSection className="MainSection">
-      <PageContainer className="PageContainer"></PageContainer>
+      <PageContainer className="PageContainer">
+        <h1>Home</h1>
+        <button onClick={() => router.push('/test')}>Go to Test</button>
+      </PageContainer>
     </MainSection>
   )
 }
