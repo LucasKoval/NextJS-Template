@@ -18,26 +18,26 @@ const Footer = () => {
         <SubContainer className="contact">
           <Link href="https://lucaskovaldev.com/">
             <a target="_blank" rel="noreferrer" title="Portfolio">
-              <Image src="/icons/portfolio.svg" alt="Portfolio" width="40px" height="40" />
+              <Image src="/icon/portfolio.svg" alt="Portfolio" width="40px" height="40" />
             </a>
           </Link>
 
           <Link href="mailto:lucaskovaldev@gmail.com">
             <a target="_blank" rel="noreferrer" title="Email">
-              <Image src="/icons/email.png" alt="Email" width="37px" height="36px" />
+              <Image src="/icon/email.png" alt="Email" width="37px" height="36px" />
             </a>
           </Link>
 
           <Link href="https://www.linkedin.com/in/lucaskoval/">
             <a target="_blank" rel="noreferrer" title="LinkedIn">
-              <Image src="/icons/linkedin.svg" alt="LinkedIn" width="35px" height="35" />
+              <Image src="/icon/linkedin.svg" alt="LinkedIn" width="35px" height="35" />
             </a>
           </Link>
 
           <Link href="https://github.com/LucasKoval">
             <a target="_blank" rel="noreferrer" title="GitHub">
               <Image
-                src="/icons/github.png"
+                src="/icon/github.png"
                 alt="GitHub"
                 width="36px"
                 height="36px"

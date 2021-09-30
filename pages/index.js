@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
+import { toast } from 'react-toastify'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Loader from 'react-loader-spinner'
 import { BodyContainer, MainSection, PageContainer } from '@/styles/mainStyles'
@@ -21,12 +22,16 @@ export default function Home() {
     )
   }
   */
+  const redirect = () => {
+    router.push('/test')
+    toast.success('Exito!')
+  }
 
   return (
     <MainSection className="MainSection">
       <PageContainer className="PageContainer">
         <h1>Home</h1>
-        <button onClick={() => router.push('/test')}>Go to Test</button>
+        <button onClick={redirect}>Go to Test</button>
       </PageContainer>
     </MainSection>
   )

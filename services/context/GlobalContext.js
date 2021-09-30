@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '@/styles/theme'
 import Header from '@/components/Header'
+import Sidebar from '@/components/Sidebar'
 import Footer from '@/components/Footer'
 import { BodyContainer } from '@/styles/mainStyles'
 
@@ -17,6 +18,7 @@ export const GlobalProvider = ({ children }) => {
       <ThemeProvider theme={theme}>
         <BodyContainer className="BodyContainer">
           <Header />
+          <Sidebar />
           {children}
           <Footer />
         </BodyContainer>
