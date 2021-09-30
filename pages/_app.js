@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps, token }) {
         <title>NextJS Template</title>
         <meta name="description" content="NextJS Template developed by Lucas Koval" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/icons/favicon.ico" />
+        <link rel="icon" href="/icon/favicon.ico" />
       </Head>
       <GlobalStyle />
       <GlobalProvider>
