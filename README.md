@@ -1,6 +1,6 @@
 # NextJS Template (2021)
 
-Developed by Lucas Koval.
+Developed by [Lucas Koval](https://lucaskovaldev.com/).
 
 ## `APP URL`
 
