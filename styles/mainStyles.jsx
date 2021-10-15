@@ -103,7 +103,7 @@ const MainSection = styled.main`
   padding: 0;
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {

@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-const SidebarSection = styled.div``
+const SidebarSection = styled.div`
+  width: 6rem;
+  height: 100%;
+  background-color: ${({ theme }) => theme.color.darkGrey};
+`
 
 const Title = styled.h1`
   text-align: center;
