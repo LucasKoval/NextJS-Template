@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Image from 'next/image'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { GrClose } from 'react-icons/gr'
+import { GlobalContext } from '@/context/GlobalContext'
 import { HeaderSection, Title, ImageContainer } from './styles'
 
 const Header = () => {
+  const { sidebarMenu, openMenu, closeMenu } = useContext(GlobalContext)
+
   return (
     <HeaderSection className="HeaderSection">
       <ImageContainer className="searchIcon">
-        <Image
-          src="/img/search.webp"
-          alt="SearchIcon"
-          width="50"
-          height="50"
-          className="searchIcon"
-        />
+        {sidebarMenu ? (
+          <GrClose onClick={closeMenu} style={{ color: '#D8D9D3' }} />
+        ) : (
+          <GiHamburgerMenu onClick={openMenu} />
+        )}
       </ImageContainer>
 
       <Title>NextJS Template</Title>

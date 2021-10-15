@@ -30,8 +30,14 @@ const ImageContainer = styled.div`
   &.searchIcon {
     width: 4rem;
     margin-left: 2rem;
-    :hover {
-      transform: scale(1.2);
+    svg {
+      font-size: 2rem;
+      :hover {
+        transform: scale(1.2);
+      }
+      path {
+        stroke: ${({ theme }) => theme.color.grey};
+      }
     }
     @media (max-width: ${({ theme }) => theme.device.mobile}) {
       width: 2.3rem;
