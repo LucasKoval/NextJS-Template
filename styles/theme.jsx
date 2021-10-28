@@ -1,4 +1,4 @@
-const theme = {
+export const theme = {
   // Import: color: ${({ theme }) => theme.color.darkGrey}
   color: {
     darkGrey: '#333333',
@@ -18,5 +18,3 @@ const theme = {
     mobile: '425px',
   },
 }
-
-export { theme }

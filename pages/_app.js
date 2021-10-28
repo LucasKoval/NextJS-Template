@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import NextNprogress from 'nextjs-progressbar'
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { ThemeProvider } from 'styled-components'
 import { GlobalProvider } from '@/context/GlobalContext'
-import { theme } from '@/styles/theme'
-import { GlobalStyle, ToastStyledContainer } from '@/styles/mainStyles'
+import { GlobalStyle, ToastStyledContainer, lightTheme, darkTheme } from '@/styles/globalStyles'
 
 function MyApp({ Component, pageProps, token }) {
+  const [theme, setTheme] = useState('dark')
+
   // Apollo client configuration
   const httpLink = createHttpLink({
     uri: 'https://example-url.com/graphql',
@@ -27,14 +28,14 @@ function MyApp({ Component, pageProps, token }) {
   })
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <Head>
         <title>NextJS Template</title>
         <meta name="description" content="NextJS Template developed by Lucas Koval" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <GlobalStyle />
-      <GlobalProvider>
+      <GlobalProvider themeStyle={theme} setThemeStyle={setTheme}>
         <ApolloProvider client={client}>
           <NextNprogress />
           <Component {...pageProps} />

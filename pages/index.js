@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Loader from 'react-loader-spinner'
 import Sidebar from '@/components/Sidebar'
-import { BodyContainer, MainSection, PageContainer } from '@/styles/mainStyles'
+import { BodyContainer, MainSection, PageContainer } from '@/styles/globalStyles'
 
 export default function Home() {
   const router = useRouter()

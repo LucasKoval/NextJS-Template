@@ -6,7 +6,11 @@ import { GlobalContext } from '@/context/GlobalContext'
 import { HeaderSection, Title, ImageContainer } from './styles'
 
 const Header = () => {
-  const { sidebarMenu, openMenu, closeMenu } = useContext(GlobalContext)
+  const { sidebarMenu, openMenu, closeMenu, themeStyle, setThemeStyle } = useContext(GlobalContext)
+
+  const themeToggler = () => {
+    themeStyle === 'light' ? setThemeStyle('dark') : setThemeStyle('light')
+  }
 
   return (
     <HeaderSection className="HeaderSection">
@@ -20,8 +24,14 @@ const Header = () => {
 
       <Title>NextJS Template</Title>
 
-      <ImageContainer className="myAvatar">
-        <Image src="/img/avatar.jpg" alt="SearchIcon" width="64" height="64" className="myAvatar" />
+      <ImageContainer className="myAvatar" onClick={() => themeToggler()}>
+        <Image
+          src="/icon/themeToogle.png"
+          alt="SearchIcon"
+          width="64"
+          height="64"
+          className="myAvatar"
+        />
       </ImageContainer>
     </HeaderSection>
   )

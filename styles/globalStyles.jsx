@@ -4,12 +4,55 @@ import { ToastContainer } from 'react-toastify'
 import Select from 'react-select'
 import 'react-toastify/dist/ReactToastify.css'
 
-const GlobalStyle = createGlobalStyle`
+export const lightTheme = {
+  body: '#fff',
+  fontColor: '#000',
+  color: {
+    darkGrey: '#333333',
+    grey: '#D8D9D3',
+    lightGrey: '#E8ECEE',
+    darkBlue: '#161B22',
+    greyBlue: '#506276',
+    blue: '#0083b0',
+    lightBlue: '#00b4db',
+    aqua: '#24CDCA',
+    yellow: '#FFC677',
+    orange: '#FF6962',
+  },
+  device: {
+    tablet: '768px',
+    mobile: '425px',
+  },
+}
+
+export const darkTheme = {
+  body: '#161B22',
+  fontColor: '#fff',
+  color: {
+    darkGrey: '#333333',
+    grey: '#D8D9D3',
+    lightGrey: '#E8ECEE',
+    darkBlue: '#161B22',
+    greyBlue: '#506276',
+    blue: '#0083b0',
+    lightBlue: '#00b4db',
+    aqua: '#24CDCA',
+    yellow: '#FFC677',
+    orange: '#FF6962',
+  },
+  device: {
+    tablet: '768px',
+    mobile: '425px',
+  },
+}
+
+export const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
 }
 html,
 body {
+  background-color: ${(props) => props.theme.body};
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -25,7 +68,7 @@ a {
 }
 `
 
-const ToastStyledContainer = styled(ToastContainer)`
+export const ToastStyledContainer = styled(ToastContainer)`
   .Toastify__toast-container {
   }
   .Toastify__toast {
@@ -35,7 +78,7 @@ const ToastStyledContainer = styled(ToastContainer)`
     box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
   }
   .Toastify__close-button > svg {
-    color: ${({ theme }) => theme.color.darkGrey};
+    color: ${({ theme }) => theme.color.darkBlue};
   }
   .Toastify__toast--info {
     background: #f4f8fa; //Original
@@ -82,7 +125,7 @@ const ToastStyledContainer = styled(ToastContainer)`
   }
 `
 
-const BodyContainer = styled.div`
+export const BodyContainer = styled.div`
   min-height: 100vh;
   height: 100vh;
   padding: 0;
@@ -91,14 +134,15 @@ const BodyContainer = styled.div`
   justify-content: center;
   align-items: center;
   color: #8b949e;
-  background-color: ${({ theme }) => theme.color.darkBlue};
+  background-color: ${(props) => props.theme.body};
+  transition: all 0.5s ease;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     min-height: 100vh;
     height: -webkit-fill-available;
   }
 `
 
-const MainSection = styled.main`
+export const MainSection = styled.main`
   width: 100%;
   padding: 0;
   flex: 1;
@@ -111,7 +155,7 @@ const MainSection = styled.main`
   }
 `
 
-const PageContainer = styled.div`
+export const PageContainer = styled.div`
   width: 80%;
   flex: 1;
   display: flex;
@@ -126,14 +170,14 @@ const PageContainer = styled.div`
   }
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
   &.notFound {
     text-align: center;
     margin-bottom: 1rem;
   }
 `
 
-const Input = styled.input`
+export const Input = styled.input`
   width: 95%;
   height: 40px;
   margin: 13px 0;
@@ -165,7 +209,7 @@ const Input = styled.input`
   }
 `
 
-const SelectInput = styled.select`
+export const SelectInput = styled.select`
   width: 95%;
   height: 40px;
   margin: 13px 0;
@@ -212,7 +256,7 @@ const SelectInput = styled.select`
   }
 `
 
-const CustomSelect = styled(Select)`
+export const CustomSelect = styled(Select)`
   width: 95%;
   height: 40px;
   margin: 13px 0;
@@ -247,7 +291,7 @@ const CustomSelect = styled(Select)`
   }
 `
 
-const selectStyles = {
+export const selectStyles = {
   control: (styles, { isDisabled, isFocused }) => ({
     ...styles,
     backgroundColor: isDisabled ? '#f2f2f2' : 'white',
@@ -297,7 +341,7 @@ const selectStyles = {
   },
 }
 
-const ErrorContainer = styled.div`
+export const ErrorContainer = styled.div`
   img {
     border-radius: 75px;
   }
@@ -310,7 +354,7 @@ const ErrorContainer = styled.div`
   }
 `
 
-const ErrorMessage = styled.span`
+export const ErrorMessage = styled.span`
   display: flex;
   justify-content: left;
   padding-left: 1%;
@@ -326,18 +370,3 @@ const ErrorMessage = styled.span`
     width: 95%;
   }
 `
-
-export {
-  GlobalStyle,
-  ToastStyledContainer,
-  BodyContainer,
-  MainSection,
-  PageContainer,
-  Title,
-  Input,
-  SelectInput,
-  CustomSelect,
-  selectStyles,
-  ErrorContainer,
-  ErrorMessage,
-}

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { ErrorContainer, Title } from '@/styles/mainStyles'
+import { ErrorContainer, Title } from '@/styles/globalStyles'
 
 export default function Error404() {
   return (
