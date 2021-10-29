@@ -11,7 +11,7 @@ export default function Home() {
     <MainSection className="MainSection">
       <Sidebar />
       <PageContainer className="PageContainer">
-        <h1>Testing Page</h1>
+        <h1>Page 3</h1>
       </PageContainer>
     </MainSection>
   )

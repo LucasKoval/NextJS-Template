@@ -7,8 +7,9 @@ const FooterSection = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${({ theme }) => theme.color.grey};
-  background-color: ${({ theme }) => theme.color.darkGrey};
+  color: ${(props) => props.theme.fontColor.footer};
+  background-color: ${(props) => props.theme.bgColor.footer};
+  transition: all 0.5s ease;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     height: 9.5rem;
   }

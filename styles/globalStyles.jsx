@@ -5,8 +5,18 @@ import Select from 'react-select'
 import 'react-toastify/dist/ReactToastify.css'
 
 export const lightTheme = {
-  body: '#fff',
-  fontColor: '#000',
+  bgColor: {
+    main: '#FFF',
+    header: '#F2F6F7',
+    sidebar: '#F2F6F7',
+    footer: '#F2F6F7',
+  },
+  fontColor: {
+    main: '#002E39',
+    header: '#0F3942',
+    sidebar: '#0F3942',
+    footer: '#0F3942',
+  },
   color: {
     darkGrey: '#333333',
     grey: '#D8D9D3',
@@ -26,8 +36,18 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  body: '#161B22',
-  fontColor: '#fff',
+  bgColor: {
+    main: '#002E39',
+    header: '#0F3942',
+    sidebar: '#0F3942',
+    footer: '#0F3942',
+  },
+  fontColor: {
+    main: '#E8ECEE',
+    header: '#D8D9D3',
+    sidebar: '#D8D9D3',
+    footer: '#D8D9D3',
+  },
   color: {
     darkGrey: '#333333',
     grey: '#D8D9D3',
@@ -133,8 +153,8 @@ export const BodyContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #8b949e;
-  background-color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.fontColor.main};
+  background-color: ${(props) => props.theme.bgColor.main};
   transition: all 0.5s ease;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     min-height: 100vh;
