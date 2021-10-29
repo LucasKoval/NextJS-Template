@@ -8,8 +8,9 @@ const HeaderSection = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: ${({ theme }) => theme.color.grey};
-  background-color: ${({ theme }) => theme.color.darkGrey};
+  color: ${(props) => props.theme.fontColor.header};
+  background-color: ${(props) => props.theme.bgColor.header};
+  transition: all 0.5s ease;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     height: 4.5rem;
     position: fixed;
@@ -27,7 +28,7 @@ const Title = styled.h1`
 `
 
 const ImageContainer = styled.div`
-  &.searchIcon {
+  &.burger {
     width: 4rem;
     margin-left: 2rem;
     svg {
@@ -47,15 +48,15 @@ const ImageContainer = styled.div`
       }
     }
   }
-  &.myAvatar {
-    width: 4rem;
-    height: 4rem;
+  &.themeToogle {
+    width: 3rem;
+    height: 3rem;
     margin-right: 2rem;
     div {
       overflow: visible !important;
       img {
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 3rem;
         border-radius: 50%;
         :hover {
           box-shadow: 0 0 10px #58a6ff;
@@ -63,14 +64,14 @@ const ImageContainer = styled.div`
       }
     }
     @media (max-width: ${({ theme }) => theme.device.mobile}) {
-      width: 2.8rem;
-      height: 2.8rem;
+      width: 2.2rem;
+      height: 2.2rem;
       margin-right: 1rem;
       div {
         overflow: visible !important;
         img {
-          width: 2.8rem;
-          height: 2.8rem;
+          width: 2.2rem;
+          height: 2.2rem;
           border-radius: 50%;
           :hover {
             box-shadow: none;

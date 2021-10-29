@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <HeaderSection className="HeaderSection">
-      <ImageContainer className="searchIcon">
+      <ImageContainer className="burger">
         {sidebarMenu ? (
           <GrClose onClick={closeMenu} style={{ color: '#D8D9D3' }} />
         ) : (
@@ -24,13 +24,13 @@ const Header = () => {
 
       <Title>NextJS Template</Title>
 
-      <ImageContainer className="myAvatar" onClick={() => themeToggler()}>
+      <ImageContainer className="themeToogle" onClick={() => themeToggler()}>
         <Image
           src="/icon/themeToogle.png"
           alt="SearchIcon"
-          width="64"
-          height="64"
-          className="myAvatar"
+          width="40"
+          height="40"
+          className="themeToogle"
         />
       </ImageContainer>
     </HeaderSection>

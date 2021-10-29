@@ -3,34 +3,52 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 import { Drawer } from '@material-ui/core'
 import { SwipeableDrawer } from '@material-ui/core'
+import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import { GlobalContext } from '@/context/GlobalContext'
-import { SidebarSection, Title, ImageContainer } from './styles'
+import { FcHome, FcDocument } from 'react-icons/fc'
+import { SidebarSection, SidebarItem, Title } from './styles'
 
 const Sidebar = () => {
   const router = useRouter()
-  const { sidebarMenu } = useContext(GlobalContext)
+  const { sidebarMenu, closeMenu } = useContext(GlobalContext)
 
-  const toHome = () => {
+  const goHome = () => {
     router.push('/')
-    toast.success('Exito!')
+    toast.success('Welcome Home!')
   }
-  const toTest = () => {
-    router.push('/test')
-    toast.success('Exito!')
+  const goToPage = (id) => {
+    router.push(`/page${id}`)
+    toast.success('Redireccionando!')
+  }
+
+  const handleClickAway = () => {
+    closeMenu()
   }
 
   return (
     sidebarMenu && (
-      <SidebarSection className="SidebarSection">
-        {/* <Drawer anchor={'left'} variant="permanent"> */}
-        <div>
-          <h2 onClick={toHome}>Home</h2>
-        </div>
-        <div>
-          <h2 onClick={toTest}>Test</h2>
-        </div>
-        {/* </Drawer> */}
-      </SidebarSection>
+      <ClickAwayListener onClickAway={handleClickAway}>
+        <SidebarSection className="SidebarSection">
+          {/* <Drawer anchor={'left'} variant="permanent"> */}
+          <SidebarItem onClick={() => goHome()}>
+            <FcHome />
+            <h2>Home</h2>
+          </SidebarItem>
+          <SidebarItem onClick={() => goToPage('1')}>
+            <FcDocument />
+            <h2>Page 1</h2>
+          </SidebarItem>
+          <SidebarItem onClick={() => goToPage('2')}>
+            <FcDocument />
+            <h2>Page 2</h2>
+          </SidebarItem>
+          <SidebarItem onClick={() => goToPage('3')}>
+            <FcDocument />
+            <h2>Page 3</h2>
+          </SidebarItem>
+          {/* </Drawer> */}
+        </SidebarSection>
+      </ClickAwayListener>
     )
   )
 }

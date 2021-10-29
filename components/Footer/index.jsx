@@ -23,13 +23,18 @@ const Footer = () => {
           </Link>
 
           <Link href="mailto:lucaskovaldev@gmail.com">
-            <a target="_blank" rel="noreferrer" title="Email">
+            <a target="_blank" rel="noreferrer" title="Email" style={{ margin: '0 0.5rem 0 1rem' }}>
               <Image src="/icon/email.png" alt="Email" width="37px" height="36px" />
             </a>
           </Link>
 
           <Link href="https://www.linkedin.com/in/lucaskoval/">
-            <a target="_blank" rel="noreferrer" title="LinkedIn">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              title="LinkedIn"
+              style={{ margin: '0 1rem 0 0.5rem' }}
+            >
               <Image src="/icon/linkedin.svg" alt="LinkedIn" width="35px" height="35" />
             </a>
           </Link>
