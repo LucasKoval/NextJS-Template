@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 import { Drawer } from '@material-ui/core'
@@ -11,6 +11,7 @@ import { SidebarSection, SidebarItem, Title } from './styles'
 const Sidebar = () => {
   const router = useRouter()
   const { sidebarMenu, closeMenu } = useContext(GlobalContext)
+  const [selected, setSelected] = useState(false)
 
   const goHome = () => {
     router.push('/')
@@ -46,6 +47,7 @@ const Sidebar = () => {
             <FcDocument />
             <h2>Page 3</h2>
           </SidebarItem>
+
           {/* </Drawer> */}
         </SidebarSection>
       </ClickAwayListener>
