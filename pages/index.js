@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Loader from 'react-loader-spinner'
-import Sidebar from '@/components/Sidebar'
 import { BodyContainer, MainSection, PageContainer } from '@/styles/globalStyles'
 
 export default function Home() {
@@ -23,19 +22,12 @@ export default function Home() {
     )
   }
   */
-  const redirect = () => {
-    router.push('/test')
-    toast.success('Exito!')
-  }
 
   return (
-    <>
-      <MainSection className="MainSection">
-        <Sidebar />
-        <PageContainer className="PageContainer">
-          <h1>Hello World!</h1>
-        </PageContainer>
-      </MainSection>
-    </>
+    <MainSection className="MainSection">
+      <PageContainer className="PageContainer">
+        <h1>Hello World!</h1>
+      </PageContainer>
+    </MainSection>
   )
 }
