@@ -4,7 +4,7 @@ export const SidebarSection = styled.div`
   position: fixed;
   left: 0;
   width: 6rem;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   background-color: ${(props) => props.theme.bgColor.sidebar};
   color: ${(props) => props.theme.fontColor.sidebar};
   box-shadow: rgb(139 148 158) 0px 0px 5px;
@@ -40,14 +40,14 @@ export const SidebarSection = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     width: 5rem;
-    padding: 0.8rem 0;
+    padding: 0.5rem 0;
   }
 `
 
 export const SidebarItem = styled.div`
   text-align: center;
   cursor: pointer;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   svg {
     font-size: 2rem;
   }
@@ -56,7 +56,7 @@ export const SidebarItem = styled.div`
     margin: 0;
   }
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
-    padding: 0.8rem 0;
+    padding: 0.5rem 0;
   }
 `
 

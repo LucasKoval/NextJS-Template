@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
-import { Drawer } from '@material-ui/core'
-import { SwipeableDrawer } from '@material-ui/core'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import { GlobalContext } from '@/context/GlobalContext'
 import { FcHome, FcDocument } from 'react-icons/fc'
@@ -30,7 +28,6 @@ const Sidebar = () => {
     sidebarMenu && (
       <ClickAwayListener onClickAway={handleClickAway}>
         <SidebarSection className="SidebarSection">
-          {/* <Drawer anchor={'left'} variant="permanent"> */}
           <SidebarItem onClick={() => goHome()}>
             <FcHome />
             <h2>Home</h2>
@@ -47,8 +44,6 @@ const Sidebar = () => {
             <FcDocument />
             <h2>Page 3</h2>
           </SidebarItem>
-
-          {/* </Drawer> */}
         </SidebarSection>
       </ClickAwayListener>
     )

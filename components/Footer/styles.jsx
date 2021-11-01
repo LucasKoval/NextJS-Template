@@ -35,6 +35,9 @@ const SubContainer = styled.div`
   align-items: center;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     margin: 0.4rem 0;
+    &.developer {
+      margin-bottom: 0.6rem;
+    }
   }
 `
 
