@@ -16,6 +16,8 @@ export const lightTheme = {
     header: '#0F3942',
     sidebar: '#0F3942',
     footer: '#0F3942',
+    menu: '#00b4db',
+    author: '#00b4db',
   },
   color: {
     darkGrey: '#333333',
@@ -47,6 +49,8 @@ export const darkTheme = {
     header: '#D8D9D3',
     sidebar: '#D8D9D3',
     footer: '#D8D9D3',
+    menu: '#FFC677',
+    author: '#FFC677',
   },
   color: {
     darkGrey: '#333333',
@@ -75,6 +79,7 @@ body {
   background-color: ${(props) => props.theme.body};
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -147,7 +152,7 @@ export const ToastStyledContainer = styled(ToastContainer)`
 
 export const BodyContainer = styled.div`
   min-height: 100vh;
-  height: 100vh;
+  height: auto;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -158,33 +163,35 @@ export const BodyContainer = styled.div`
   transition: all 0.5s ease;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     min-height: 100vh;
-    height: -webkit-fill-available;
   }
 `
 
 export const MainSection = styled.main`
   width: 100%;
-  padding: 0;
+  height: auto;
+  padding: 0 2rem;
+  padding-top: 100px;
   flex: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
-    height: -webkit-fill-available;
+    padding: 0 1rem;
+    padding-top: 4.5rem;
   }
 `
 
 export const PageContainer = styled.div`
-  width: 80%;
+  width: 100%;
   flex: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     width: 90%;
-    height: -webkit-fill-available;
     flex-flow: column;
     justify-content: center;
   }
@@ -193,7 +200,22 @@ export const PageContainer = styled.div`
 export const Title = styled.h1`
   &.notFound {
     text-align: center;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
+  }
+`
+
+export const Paragraph = styled.p`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8rem;
+  line-height: 120%;
+  color: ${({ theme }) => theme.color.darkBlue};
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
+    font-size: 1rem;
   }
 `
 
@@ -229,50 +251,35 @@ export const Input = styled.input`
   }
 `
 
-export const SelectInput = styled.select`
+export const Textarea = styled.textarea`
   width: 95%;
-  height: 40px;
-  margin: 13px 0;
-  padding: 0 44px 0 13px;
+  height: auto;
+  max-height: 150px;
+  background: transparent;
   border: 1px solid #d9dadb;
   border-radius: 6px;
   outline: none;
-  display: inline-block;
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 140.4%;
-  color: ${({ theme }) => theme.color.darkGrey};
+  color: ${({ theme }) => theme.colors.primary};
+  padding: 10px 12px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px),
-    calc(100% - 2.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  background-repeat: no-repeat;
   :focus {
-    background-image: linear-gradient(45deg, #ff6962 50%, transparent 50%),
-      linear-gradient(135deg, transparent 50%, #ff6962 50%), linear-gradient(to right, #ccc, #ccc);
-    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
-    background-size: 5px 5px, 5px 5px, 1px 1.5em;
-    background-repeat: no-repeat;
-    outline: 0;
-  }
-  -moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
+    outline: none;
+    border: 1px solid #24cdc9;
   }
   &.half {
-    display: flex;
     width: 45%;
   }
   &.all {
-    display: flex;
     width: 95%;
+  }
+  &.full {
+    width: 100%;
   }
 `
 
@@ -300,11 +307,11 @@ export const CustomSelect = styled(Select)`
     color: #999999;
     cursor: default;
   }
-  &.half {
-    width: 45%;
-  }
   &.all {
     width: 95%;
+  }
+  &.half {
+    width: 45%;
   }
   &.full {
     width: 100%;
@@ -361,12 +368,66 @@ export const selectStyles = {
   },
 }
 
+export const Button = styled.button`
+  height: 48px;
+  width: 198px;
+  border-radius: 32px;
+  color: #ffffff;
+  background: #ff6962;
+  border: none;
+  align-self: flex-end;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  &:hover {
+    border: 1px solid rgba(255, 105, 98, 1);
+    color: #ff6962;
+    background: rgba(255, 105, 98, 0.15);
+    transition: all 0.5s;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    background: #ff6962;
+    border: none;
+  }
+  &:disabled {
+    outline: none;
+    border: 1px solid #a6a6a6;
+    background: #f3f5f6;
+    color: #a6a6a6;
+    cursor: default;
+  }
+  &.white {
+    color: #4f6276;
+    border: 2px solid #4f6276;
+    background: #ffffff;
+    margin-right: 18px;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    margin-bottom: 18px;
+    &.normalSize {
+      width: 198px;
+      margin-bottom: 0;
+    }
+    &.white {
+      margin-bottom: 0.5rem;
+      margin-right: 0;
+    }
+  }
+`
+
 export const ErrorContainer = styled.div`
+  padding: 7rem 0 2rem 0;
   img {
     border-radius: 75px;
   }
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
-    margin-top: 5rem;
+    padding: 0;
     img {
       width: '300px';
       height: '169px';
@@ -377,16 +438,15 @@ export const ErrorContainer = styled.div`
 export const ErrorMessage = styled.span`
   display: flex;
   justify-content: left;
-  padding-left: 1%;
   font-size: 14px;
   color: rgba(245, 16, 0, 0.8);
-  opacity: 0.9;
   &.half {
-    display: flex;
     width: 45%;
   }
   &.all {
-    display: flex;
     width: 95%;
+  }
+  &.full {
+    width: 100%;
   }
 `

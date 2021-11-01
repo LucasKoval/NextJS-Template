@@ -23,41 +23,38 @@ const Header = () => {
 
   const goToPage = (id) => {
     router.push(`/page${id}`)
-    toast.success('Redireccionando!')
   }
 
   return (
     <HeaderSection className="HeaderSection">
       <ImageContainer className="burger">
-        <div id="menuToggle">
-          <input type="checkbox" />
+        <input type="checkbox" />
 
-          <span></span>
-          <span></span>
-          <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
 
-          <ul id="menu">
-            <a href="#">
-              <IoHomeOutline />
-              <li>Home</li>
-            </a>
-            <a href="#">
-              <IoDocumentTextOutline />
-              <li>Page 1</li>
-            </a>
-            <a href="#">
-              <IoDocumentTextOutline />
-              <li>Page 2</li>
-            </a>
-            <a href="#">
-              <IoDocumentTextOutline />
-              <li>Page 3</li>
-            </a>
-          </ul>
-        </div>
+        <ul className="menu">
+          <a onClick={() => goHome()}>
+            <IoHomeOutline />
+            <li>Home</li>
+          </a>
+          <a onClick={() => goToPage('1')}>
+            <IoDocumentTextOutline />
+            <li>Page 1</li>
+          </a>
+          <a onClick={() => goToPage('2')}>
+            <IoDocumentTextOutline />
+            <li>Page 2</li>
+          </a>
+          <a onClick={() => goToPage('3')}>
+            <IoDocumentTextOutline />
+            <li>Page 3</li>
+          </a>
+        </ul>
       </ImageContainer>
 
-      <Title>NextJS Template</Title>
+      <Title onClick={() => goHome()}>NextJS Template</Title>
 
       <ImageContainer className="themeToogle" onClick={() => themeToggler()}>
         <Image

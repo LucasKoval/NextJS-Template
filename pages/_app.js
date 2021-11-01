@@ -8,7 +8,7 @@ import { GlobalProvider } from '@/context/GlobalContext'
 import { GlobalStyle, ToastStyledContainer, lightTheme, darkTheme } from '@/styles/globalStyles'
 
 function MyApp({ Component, pageProps, token }) {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
 
   // Apollo client configuration
   const httpLink = createHttpLink({

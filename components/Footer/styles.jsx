@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const FooterSection = styled.footer`
   width: 100%;
   height: 100px;
+  bottom: 0;
   box-shadow: 0 0 5px #8b949e;
   display: flex;
   justify-content: center;
@@ -48,7 +49,7 @@ const Title = styled.h4`
 const Credits = styled.p`
   font-size: 17px;
   margin: 0;
-  color: ${({ theme }) => theme.color.lightBlue};
+  color: ${(props) => props.theme.fontColor.author};
 `
 
 export { FooterSection, Container, SubContainer, Title, Credits }
