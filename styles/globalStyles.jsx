@@ -10,6 +10,7 @@ export const lightTheme = {
     header: '#F2F6F7',
     sidebar: '#F2F6F7',
     footer: '#F2F6F7',
+    toast: '#0F3942',
   },
   fontColor: {
     main: '#002E39',
@@ -18,6 +19,7 @@ export const lightTheme = {
     footer: '#0F3942',
     menu: '#00b4db',
     author: '#00b4db',
+    toast: '#D8D9D3',
   },
   color: {
     darkGrey: '#333333',
@@ -43,6 +45,7 @@ export const darkTheme = {
     header: '#0F3942',
     sidebar: '#0F3942',
     footer: '#0F3942',
+    toast: '#F2F6F7',
   },
   fontColor: {
     main: '#E8ECEE',
@@ -51,6 +54,7 @@ export const darkTheme = {
     footer: '#D8D9D3',
     menu: '#FFC677',
     author: '#FFC677',
+    toast: '#0F3942',
   },
   color: {
     darkGrey: '#333333',
@@ -97,22 +101,23 @@ export const ToastStyledContainer = styled(ToastContainer)`
   .Toastify__toast-container {
   }
   .Toastify__toast {
+    color: ${(props) => props.theme.fontColor.toast};
+    background-color: ${(props) => props.theme.bgColor.toast};
     font-size: 1rem;
     height: 4rem;
     -webkit-box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
   }
   .Toastify__close-button > svg {
-    color: ${({ theme }) => theme.color.darkBlue};
+    color: ${(props) => props.theme.fontColor.toast};
   }
   .Toastify__toast--info {
-    background: #f4f8fa; //Original
-    /* background-image: url(/img/toast-bg-desktop.jpg); */
+    /* background-image: url(/img/toast-bg-desktop.jpg);
     color: ${({ theme }) => theme.color.darkGrey};
     border-top: 1px solid #3598db;
-    border-bottom: 1px solid #3598db;
-
+    border-bottom: 1px solid #3598db; */
     .Toastify__progress-bar {
+      height: 4px;
       background: #3598db;
     }
     @media (max-width: ${({ theme }) => theme.device.mobile}) {
@@ -120,13 +125,12 @@ export const ToastStyledContainer = styled(ToastContainer)`
     }
   }
   .Toastify__toast--success {
-    background: #e4ebd6; //Original
-    /* background-image: url(/img/toast-bg-desktop.jpg); */
+    /* background-image: url(/img/toast-bg-desktop.jpg);
     color: ${({ theme }) => theme.color.darkGrey};
-    border-top: 1px solid #08bc0d;
-    border-bottom: 1px solid #08bc0d;
+    border-top: 2px solid #08bc0d;
+    border-bottom: 1px solid #08bc0d; */
     .Toastify__progress-bar {
-      /* background: #bfd592; */ //Original
+      height: 4px;
       background: #08bc0d;
     }
     @media (max-width: ${({ theme }) => theme.device.mobile}) {
@@ -136,12 +140,12 @@ export const ToastStyledContainer = styled(ToastContainer)`
   .Toastify__toast--warning {
   }
   .Toastify__toast--error {
-    background: #f5b7b1; //Original
-    /* background-image: url(/img/toast-bg-desktop.jpg); */
-    color: ${({ theme }) => theme.color.darkGrey};
+    /* background-image: url(/img/toast-bg-desktop.jpg);
+    color: ${({ theme }) => theme.color.darkGrey}; 
     border-top: 1px solid #e74d3d;
-    border-bottom: 1px solid #e74d3d;
+    border-bottom: 1px solid #e74d3d; */
     .Toastify__progress-bar {
+      height: 4px;
       background: #e74d3d;
     }
     @media (max-width: ${({ theme }) => theme.device.mobile}) {

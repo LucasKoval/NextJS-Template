@@ -1,15 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
 import { IoHomeOutline, IoDocumentTextOutline } from 'react-icons/io5'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import { GlobalContext } from '@/context/GlobalContext'
-import { HeaderSection, Title, SidebarItem, ImageContainer } from './styles'
+import { HeaderSection, Title, ImageContainer } from './styles'
 
 const Header = () => {
   const router = useRouter()
-  const { sidebarMenu, openMenu, closeMenu, themeStyle, setThemeStyle } = useContext(GlobalContext)
+  const { themeStyle, setThemeStyle } = useContext(GlobalContext)
   const [selected, setSelected] = useState(false)
 
   const themeToggler = () => {
@@ -60,8 +59,8 @@ const Header = () => {
         <Image
           src="/icon/themeToogle.png"
           alt="SearchIcon"
-          width="40"
-          height="40"
+          width="45"
+          height="45"
           className="themeToogle"
         />
       </ImageContainer>
