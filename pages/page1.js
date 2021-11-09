@@ -1,7 +1,7 @@
 import React from 'react'
 /* import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css' */
-import { /* BodyContainer, */ MainSection, PageContainer } from '@/styles/globalStyles'
+import { /* BodyContainer, */ MainSection, PageContainer, Subtitle } from '@/styles/globalStyles'
 
 export default function Page1() {
   /*/// Show the spinner when loading the component (NOT_IN_USE)
@@ -22,6 +22,7 @@ export default function Page1() {
 
   return (
     <MainSection className="MainSection">
+      <Subtitle>Subtitle</Subtitle>
       <PageContainer className="PageContainer">
         <h1>Page 1</h1>
       </PageContainer>
