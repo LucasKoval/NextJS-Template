@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const FooterSection = styled.footer`
+export const FooterSection = styled.footer`
   width: 100%;
   height: 100px;
   bottom: 0;
@@ -16,7 +16,7 @@ const FooterSection = styled.footer`
   }
 `
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 4rem;
   display: flex;
@@ -28,7 +28,7 @@ const Container = styled.div`
   }
 `
 
-const SubContainer = styled.div`
+export const SubContainer = styled.div`
   width: 100%;
   height: auto;
   display: flex;
@@ -42,14 +42,12 @@ const SubContainer = styled.div`
   }
 `
 
-const Title = styled.h4`
+export const Title = styled.h4`
   margin: 0;
 `
 
-const Credits = styled.p`
+export const Credits = styled.p`
   font-size: 17px;
   margin: 0;
   color: ${(props) => props.theme.fontColor.author};
 `
-
-export { FooterSection, Container, SubContainer, Title, Credits }
