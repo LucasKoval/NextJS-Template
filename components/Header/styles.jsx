@@ -4,6 +4,7 @@ export const HeaderSection = styled.header`
   width: 100%;
   height: 6.5rem;
   position: fixed;
+  z-index: 9999;
   top: 0;
   box-shadow: 0 0 5px #8b949e;
   display: flex;
@@ -14,7 +15,6 @@ export const HeaderSection = styled.header`
   transition: all 0.5s ease;
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     height: 4.5rem;
-    z-index: 100;
   }
 `
 

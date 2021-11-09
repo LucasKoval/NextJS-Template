@@ -49,9 +49,9 @@ export const darkTheme = {
   },
   fontColor: {
     main: '#E8ECEE',
-    header: '#D8D9D3',
-    sidebar: '#D8D9D3',
-    footer: '#D8D9D3',
+    header: '#E8ECEE',
+    sidebar: '#E8ECEE',
+    footer: '#E8ECEE',
     menu: '#FFC677',
     author: '#FFC677',
     toast: '#0F3942',
@@ -190,10 +190,9 @@ export const PageContainer = styled.div`
   width: 100%;
   flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
-
   @media (max-width: ${({ theme }) => theme.device.mobile}) {
     width: 90%;
     flex-flow: column;
@@ -205,6 +204,16 @@ export const Title = styled.h1`
   &.notFound {
     text-align: center;
     margin: 1rem 0;
+  }
+`
+
+export const Subtitle = styled.h2`
+  text-transform: uppercase;
+  margin-top: 3rem;
+  margin-bottom: -2rem;
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 `
 
