@@ -89,7 +89,7 @@ export const ImageContainer = styled.div`
     input:checked ~ span {
       opacity: 1;
       transform: rotate(45deg) translate(-2px, -1px);
-      background: ${(props) => props.theme.fontColor.header};
+      background: ${({ theme }) => theme.color.coral};
       &:nth-last-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
@@ -155,6 +155,7 @@ export const ImageContainer = styled.div`
         :hover {
           box-shadow: 0 0 10px ${(props) => props.theme.fontColor.author};
           cursor: pointer;
+          transition: all 0.4s ease;
         }
       }
     }
