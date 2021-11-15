@@ -10,7 +10,7 @@ export const lightTheme = {
     header: '#eaeaea',
     sidebar: '#eaeaea',
     footer: '#eaeaea',
-    toast: '#0F3942',
+    toast: '#203A43',
   },
   fontColor: {
     main: '#203A43',
@@ -45,7 +45,7 @@ export const darkTheme = {
     header: '#0F2027',
     sidebar: '#0F2027',
     footer: '#0F2027',
-    toast: '#F2F6F7',
+    toast: '#E8ECEE',
   },
   fontColor: {
     main: '#E8ECEE',
@@ -54,7 +54,7 @@ export const darkTheme = {
     footer: '#E8ECEE',
     menu: '#FFC677',
     author: '#FFC677',
-    toast: '#0F3942',
+    toast: '#203A43',
   },
   color: {
     darkGrey: '#333333',
