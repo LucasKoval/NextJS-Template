@@ -87,7 +87,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-h1, h2, h3, h4, p, span, strong, input, select, option, button, div, a {
+h1, h2, h3, h4, p, span, strong, input, textarea, select, option, button, div, a {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -274,7 +274,7 @@ export const Textarea = styled.textarea`
   outline: none;
   font-size: 14px;
   line-height: 140.4%;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.color.darkGrey};
   padding: 10px 12px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -308,13 +308,12 @@ export const CustomSelect = styled(Select)`
   font-weight: normal;
   font-size: 14px;
   line-height: 140.4%;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.color.darkGrey};
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
-
   &:disabled {
     background-color: #f2f2f2;
     color: #999999;
@@ -399,7 +398,7 @@ export const Button = styled.button`
     border: 1px solid rgba(255, 105, 98, 1);
     color: #ff6962;
     background: rgba(255, 105, 98, 0.15);
-    transition: all 0.5s;
+    transition: all 0.5s ease;
   }
   &:focus,
   &:focus-visible {
@@ -418,23 +417,13 @@ export const Button = styled.button`
     color: #4f6276;
     border: 2px solid #4f6276;
     background: #ffffff;
-    margin-right: 18px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: ${({ theme }) => theme.device.mobile}) {
     width: 100%;
-    margin-bottom: 18px;
-    &.normalSize {
-      width: 198px;
-      margin-bottom: 0;
-    }
-    &.white {
-      margin-bottom: 0.5rem;
-      margin-right: 0;
-    }
   }
 `
 
-export const ErrorContainer = styled.div`
+export const ErrorPageContainer = styled.div`
   padding: 7rem 0 2rem 0;
   img {
     border-radius: 75px;

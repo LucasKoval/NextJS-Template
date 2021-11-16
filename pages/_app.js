@@ -58,11 +58,11 @@ function MyApp({ Component, pageProps, token }) {
 
 export default MyApp
 
-MyApp.getInitialProps = async function ({ Component, ctx }) {
+MyApp.getStaticProps = async function ({ Component, ctx }) {
   const token = process.env.TOKEN || ''
   let pageProps = {}
   if (Component.getInitialProps) {
-    pageProps = Component.getInitialProps(ctx)
+    pageProps = Component.getStaticProps(ctx)
   }
   return { pageProps, token }
 }
