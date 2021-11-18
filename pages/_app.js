@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import NextNprogress from 'nextjs-progressbar'
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client'
@@ -8,7 +8,11 @@ import { GlobalProvider } from '@/context/GlobalContext'
 import { GlobalStyle, ToastStyledContainer, lightTheme, darkTheme } from '@/styles/globalStyles'
 
 function MyApp({ Component, pageProps, token }) {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState()
+
+  useEffect(() => {
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')
+  }, [])
 
   // Apollo client configuration
   const httpLink = createHttpLink({
